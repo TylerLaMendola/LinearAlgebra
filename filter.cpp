@@ -28,7 +28,19 @@ private:
     vector<vector<pixel>> image;
     
 public:
-    
+    void fill (){
+        int x = 0;
+        for(int i = 0; i < image.size(); ++i){
+            for(int j =0; j < image.size(); ++j){
+                
+                image[i][j].red = x;
+                image[i][j].green = x;
+                image[i][j].blue = x;
+                
+            }
+            ++x;
+        }
+    }
     void vecResize(){
         
         image.resize(10, vector<pixel>(10));
@@ -62,7 +74,7 @@ int main() {
     
     filter f;
     f.vecResize();
-    
+    f.fill();
     
     f.print();
 
